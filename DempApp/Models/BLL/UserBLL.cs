@@ -16,6 +16,11 @@ namespace DempApp.Models.BLL
             return userDAL.GetUserByID();
         }
 
+        
+        public DataTable QueryData(string Query)
+        {
+            return userDAL.QueryData(Query);
+        }
 
     }
 }

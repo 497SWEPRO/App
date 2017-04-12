@@ -16,6 +16,7 @@ namespace DempApp.Views
 {
     public partial class QueryData : Form
     {
+        UserBLL userBLL = new UserBLL();
         public QueryData()
         {
             InitializeComponent();
@@ -28,10 +29,17 @@ namespace DempApp.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Connection.SetDWConnectionString("", "", "", "TestDB");
-            UserBLL userBLL = new UserBLL();
-            DataTable dt = userBLL.GetUserByID();
+            DataTable dt = userBLL.QueryData(textBox1.Text);
             dataGridView1.DataSource = dt;
+            Connection.SaveDWConnection();
+        }
+
+        private void QueryData_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = "Select * From Users";
+            DataTable dt = userBLL.QueryData(textBox1.Text);
+            dataGridView1.DataSource = dt;
+
         }
     }
 }

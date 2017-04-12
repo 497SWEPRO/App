@@ -4,45 +4,21 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace DempApp.Shared
 {
-    static class Connection
+    public static class Connection
     {
-        private static SqlConnection AzureConnection = new SqlConnection();
-        private static SqlConnection DWConnection = new SqlConnection();
-        private static bool AzureFlag = false;
-        private static bool DWFlag = false;
+        private static string AzureConnection;
+        private static string DWConnection;
 
-        public static void SetAzureConnectionString(string ServerIP,string UserID,string Password,string DataBaseName)
-        {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                
-            builder.DataSource = ServerIP;  //"your_server.database.windows.net";
-            builder.UserID = UserID;
-            builder.Password = Password;
-            builder.InitialCatalog = DataBaseName;
-            AzureConnection.ConnectionString = builder.ConnectionString;
-            AzureFlag = true;
-        }
 
-        public static SqlConnection GetAzureConnection()
-        {
-            if(AzureFlag == true)
-            {
-                return AzureConnection;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        public static void SetDWConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)
+        public static void SetAzureConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)
         {
             string Connection;
 
-            if (ServerIP == "" && UserID== ""&& Password=="")
+            if (ServerIP == "" && UserID == "" && Password == "")
             {
                 Connection = "data source=localhost;   initial catalog=" + DataBaseName + "; persist security info=True;     Integrated Security=SSPI;";
             }
@@ -51,23 +27,63 @@ namespace DempApp.Shared
             {
                 Connection = "Data Source=" + ServerIP + ";Initial Catalog=" + DataBaseName + ";User Id=" + UserID + ";Password=" + Password;
             }
-            
-             
 
-            DWConnection.ConnectionString = Connection;
-            DWFlag = true;
+
+
+            AzureConnection = Connection;
+
         }
-
-        public static SqlConnection GetDWConnection()
+        public static void SetDWConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)
         {
-            if (DWFlag == true)
+            string Connection;
+
+            if (ServerIP == "" && UserID == "" && Password == "")
             {
-                return DWConnection;
+                Connection = "data source=localhost;   initial catalog=" + DataBaseName + "; persist security info=True;     Integrated Security=SSPI;";
             }
+
             else
             {
-                return null;
+                Connection = "Data Source=" + ServerIP + ";Initial Catalog=" + DataBaseName + ";User Id=" + UserID + ";Password=" + Password;
             }
+
+
+
+            DWConnection = Connection;
+
         }
+
+        public static string GetDWConnection()
+        {
+
+            return DWConnection;
+
+        }
+
+        public static string GetAzureConnection()
+        {
+
+            return AzureConnection;
+
+        }
+
+        public static void SaveDWConnection()
+        {
+            StreamWriter File = new StreamWriter("DWConnection.cn");
+            File.Write(DWConnection);
+            File.Close();
+        }
+
+
+        public static void SaveAzureConnection()
+        {
+            StreamWriter File = new StreamWriter("AzureConnection.cn");
+            File.Write(AzureConnection);
+            File.Close();
+        }
+
+
+
+
     }
 }

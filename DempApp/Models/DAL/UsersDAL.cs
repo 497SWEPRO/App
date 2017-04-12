@@ -15,7 +15,8 @@ namespace DempApp.Models.DAL
 
         public DataTable GetUserByID()
         {
-            SqlConnection Connnection = Connection.GetDWConnection();
+            SqlConnection Connnection = new SqlConnection();
+            Connnection.ConnectionString = Connection.GetDWConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter db = new SqlDataAdapter();
             DataTable dt = new DataTable();
@@ -26,6 +27,32 @@ namespace DempApp.Models.DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "GetAllUser";
                     //cmd.Parameters.Add(new SqlParameter("@UserID", UserID));
+                    cmd.Connection = Connnection;
+                    Connnection.Open();
+                    cmd.ExecuteScalar();
+                    db.SelectCommand = cmd;
+                    db.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                }
+                return dt;
+            }
+        }
+
+        public DataTable QueryData(string Query)
+        {
+            SqlConnection Connnection = new SqlConnection();
+            Connnection.ConnectionString = Connection.GetDWConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter db = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            using (Connnection)
+            {
+                try
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = Query;                   
                     cmd.Connection = Connnection;
                     Connnection.Open();
                     cmd.ExecuteScalar();
