@@ -41,5 +41,10 @@ namespace DempApp.Views
             dataGridView1.DataSource = dt;
 
         }
+
+        private void QueryData_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

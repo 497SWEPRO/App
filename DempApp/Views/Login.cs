@@ -30,6 +30,11 @@ namespace DempApp.Views
             Track.Move(this,1);
             new AdminController().ViewAdminPage();
         }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
  

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDefualt));
             this.Btn_Logout = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -41,90 +42,63 @@
             // 
             // Btn_Logout
             // 
-            this.Btn_Logout.Location = new System.Drawing.Point(447, 391);
+            this.Btn_Logout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.Btn_Logout, "Btn_Logout");
             this.Btn_Logout.Name = "Btn_Logout";
-            this.Btn_Logout.Size = new System.Drawing.Size(87, 30);
-            this.Btn_Logout.TabIndex = 28;
-            this.Btn_Logout.Text = "Logout";
             this.Btn_Logout.UseVisualStyleBackColor = true;
             this.Btn_Logout.Click += new System.EventHandler(this.Btn_Logout_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(171, 349);
+            resources.ApplyResources(this.button6, "button6");
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(203, 33);
-            this.button6.TabIndex = 27;
-            this.button6.Text = "Set-Up Connection";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(171, 287);
+            resources.ApplyResources(this.button5, "button5");
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(203, 33);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "Migrate Data";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(171, 231);
+            resources.ApplyResources(this.button4, "button4");
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(203, 33);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "Build on Azure";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(171, 177);
+            resources.ApplyResources(this.button3, "button3");
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(203, 33);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Check Incompatibility";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(171, 123);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 33);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Extract metadata";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(205, 78);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 23);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Management";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(548, 37);
-            this.panel2.TabIndex = 21;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(-1, 427);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(548, 29);
-            this.panel1.TabIndex = 20;
             // 
             // AdminDefualt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 457);
             this.Controls.Add(this.Btn_Logout);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -134,10 +108,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminDefualt";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminDefualt";
+            this.ShowIcon = false;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDefualt_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

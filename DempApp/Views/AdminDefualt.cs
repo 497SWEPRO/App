@@ -22,5 +22,10 @@ namespace DempApp.Views
         {
             Track.GoBack(this,1);
         }
+
+        private void AdminDefualt_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -29,5 +29,10 @@ namespace DempApp.Views
             Track.Move(this,0);
             new QueryDataController().ViewQueryDataPage();
         }
+
+        private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
