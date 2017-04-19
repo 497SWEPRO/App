@@ -17,6 +17,7 @@ namespace DempApp.Views
     public partial class QueryData : Form
     {
         UserBLL userBLL = new UserBLL();
+        DataBaseBLL dbBLL = new DataBaseBLL();
         public QueryData()
         {
             InitializeComponent();
@@ -29,9 +30,12 @@ namespace DempApp.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dt = userBLL.QueryData(textBox1.Text);
+            /* DataTable dt = userBLL.QueryData(textBox1.Text);
+             dataGridView1.DataSource = dt;
+             Connection.SaveDWConnection();*/
+            DataTable dt = dbBLL.GetDataBaseSchema();
             dataGridView1.DataSource = dt;
-            Connection.SaveDWConnection();
+
         }
 
         private void QueryData_Load(object sender, EventArgs e)

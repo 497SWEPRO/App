@@ -15,5 +15,7 @@ namespace DempApp.Controllers
             new QueryData().Show();
         }
 
+
+
     }
 }
