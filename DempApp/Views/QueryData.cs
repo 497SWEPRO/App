@@ -30,19 +30,19 @@ namespace DempApp.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /* DataTable dt = userBLL.QueryData(textBox1.Text);
+             DataTable dt = userBLL.QueryData(textBox1.Text);
              dataGridView1.DataSource = dt;
-             Connection.SaveDWConnection();*/
-            DataTable dt = dbBLL.GetDataBaseSchema();
-            dataGridView1.DataSource = dt;
+             Connection.SaveDWConnection();
+            /*DataTable dt = dbBLL.GetDataBaseSchema();
+            dataGridView1.DataSource = dt;*/
 
         }
 
         private void QueryData_Load(object sender, EventArgs e)
         {
-            textBox1.Text = "Select * From Users";
+            /*textBox1.Text = "Select * From Users";
             DataTable dt = userBLL.QueryData(textBox1.Text);
-            dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = dt;*/
 
         }
 

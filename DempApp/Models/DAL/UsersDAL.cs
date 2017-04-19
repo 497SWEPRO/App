@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DempApp.Shared;
+using System.Windows.Forms;
 
 namespace DempApp.Models.DAL
 {
@@ -61,6 +62,7 @@ namespace DempApp.Models.DAL
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                 }
                 return dt;
             }
