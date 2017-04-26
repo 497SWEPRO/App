@@ -45,9 +45,7 @@ namespace DempApp.Shared
 
             else
             {
-                // Connection = "Data Source=" + ServerIP + ";Initial Catalog=" + DataBaseName + ";User Id=" + UserID + ";Password=" + Password;
-                // Connection = "Server=tcp:migrator.database.windows.net,1433;Initial Catalog=Migrator;Persist Security Info=False;User ID={adel};Password={A12345ksu};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-                Connection = "Data Source=migrator.database.windows.net;Initial Catalog=Migrator;User ID=adel;Password=A12345ksu";
+                 Connection = "Data Source=" + ServerIP + ";Initial Catalog=" + DataBaseName + ";User Id=" + UserID + ";Password=" + Password;                 
             }
 
 
