@@ -10,8 +10,8 @@ namespace DempApp.Shared
 {
     public static class Connection
     {
-        private static string AzureConnection;
-        private static string DWConnection;
+        private static string AzureConnection="";
+        private static string DWConnection="";
 
 
         public static void SetAzureConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)
@@ -86,6 +86,28 @@ namespace DempApp.Shared
         }
 
 
+        public static bool CheckDWConnectionState()
+        {
+            if (DWConnection == "")
+            {
+                return false;
+            } else
+            {
+                return true;
+            }
+        }
+
+        public static bool CheckAzureConnectionState()
+        {
+            if (AzureConnection == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
 
     }

@@ -4,15 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DempApp.Views;
+using DempApp.Shared;
+using System.Windows.Forms;
+using System.Data;
+using DempApp.Models.BLL;
 
 namespace DempApp.Controllers
 {
     class QueryDataController
     {
-
+        DataBaseBLL DbBLL = new DataBaseBLL();
         public void ViewQueryDataPage()
         {
-            new QueryData().Show();
+            if (Connection.CheckAzureConnectionState())
+            {
+                new QueryData().Show();
+            }
+            else
+            {
+                MessageBox.Show("No Connection Established", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Track.GoBack(null, 0);
+            }
+            
+        }
+
+        public DataTable QueryData(string Query)
+        {
+            DataTable dt;
+            try
+            {
+                dt = DbBLL.ExcuteQuery(Query);
+            }
+            catch (Exception ex)
+            {
+                dt = new DataTable();
+                MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return dt;
         }
 
 

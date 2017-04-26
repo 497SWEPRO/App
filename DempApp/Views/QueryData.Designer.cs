@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DGV_Result = new System.Windows.Forms.DataGridView();
+            this.Btn_Excute = new System.Windows.Forms.Button();
+            this.txt_Query = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_Back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Result)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DGV_Result
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(548, 209);
-            this.dataGridView1.TabIndex = 16;
+            this.DGV_Result.AllowUserToAddRows = false;
+            this.DGV_Result.AllowUserToDeleteRows = false;
+            this.DGV_Result.AllowUserToResizeColumns = false;
+            this.DGV_Result.AllowUserToResizeRows = false;
+            this.DGV_Result.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.DGV_Result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Result.Location = new System.Drawing.Point(-1, 221);
+            this.DGV_Result.Name = "DGV_Result";
+            this.DGV_Result.Size = new System.Drawing.Size(548, 209);
+            this.DGV_Result.TabIndex = 16;
             // 
-            // button1
+            // Btn_Excute
             // 
-            this.button1.Location = new System.Drawing.Point(203, 186);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 29);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Excute";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_Excute.Location = new System.Drawing.Point(203, 186);
+            this.Btn_Excute.Name = "Btn_Excute";
+            this.Btn_Excute.Size = new System.Drawing.Size(125, 29);
+            this.Btn_Excute.TabIndex = 15;
+            this.Btn_Excute.Text = "Excute";
+            this.Btn_Excute.UseVisualStyleBackColor = true;
+            this.Btn_Excute.Click += new System.EventHandler(this.Btn_Excute_Click);
             // 
-            // textBox1
+            // txt_Query
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 98);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(522, 82);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.WordWrap = false;
+            this.txt_Query.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Query.Location = new System.Drawing.Point(12, 98);
+            this.txt_Query.Multiline = true;
+            this.txt_Query.Name = "txt_Query";
+            this.txt_Query.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_Query.Size = new System.Drawing.Size(522, 82);
+            this.txt_Query.TabIndex = 14;
+            this.txt_Query.WordWrap = false;
             // 
             // label1
             // 
@@ -115,9 +115,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 457);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DGV_Result);
+            this.Controls.Add(this.Btn_Excute);
+            this.Controls.Add(this.txt_Query);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -128,7 +128,7 @@
             this.Text = "QueryData";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QueryData_FormClosing);
             this.Load += new System.EventHandler(this.QueryData_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Result)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,9 +137,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView DGV_Result;
+        private System.Windows.Forms.Button Btn_Excute;
+        private System.Windows.Forms.TextBox txt_Query;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Btn_Back;

@@ -22,8 +22,15 @@ namespace DempApp.Controllers
         
         public static void GoBack(Form Caller,int Level)
         {
-            Caller.Hide();
-            Back[Level].Show();
+            if (Caller == null)
+            {
+                Back[Level].Show();
+            }else
+            {
+                Caller.Hide();
+                Back[Level].Show();
+            }
+           
         }
         
         public static void Move(Form Caller,int Level)

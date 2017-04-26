@@ -38,5 +38,33 @@ namespace DempApp.Models.DAL
             }
         }
 
+
+        public DataTable ExcuteQuery(string Query)
+        {
+            SqlConnection Connnection = new SqlConnection();
+            Connnection.ConnectionString = Connection.GetDWConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter db = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            using (Connnection)
+            {
+                try
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = Query;
+                    cmd.Connection = Connnection;
+                    Connnection.Open();
+                    cmd.ExecuteScalar();
+                    db.SelectCommand = cmd;
+                    db.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                return dt;
+            }
+        }
+
     }
 }

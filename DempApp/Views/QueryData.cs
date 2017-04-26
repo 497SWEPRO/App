@@ -28,27 +28,28 @@ namespace DempApp.Views
             Track.GoBack(this,0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-             DataTable dt = userBLL.QueryData(textBox1.Text);
-             dataGridView1.DataSource = dt;
-             Connection.SaveDWConnection();
-            /*DataTable dt = dbBLL.GetDataBaseSchema();
-            dataGridView1.DataSource = dt;*/
-
-        }
-
         private void QueryData_Load(object sender, EventArgs e)
         {
-            /*textBox1.Text = "Select * From Users";
-            DataTable dt = userBLL.QueryData(textBox1.Text);
-            dataGridView1.DataSource = dt;*/
 
         }
 
         private void QueryData_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Btn_Excute_Click(object sender, EventArgs e)
+        {
+            string Query = txt_Query.Text;
+            DataTable Result;
+            if (Query == "")
+            {
+                MessageBox.Show("Please Enter Query","Warnning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }else
+            {
+                Result= new QueryDataController().QueryData(Query);
+                DGV_Result.DataSource = Result;
+            }
         }
     }
 }
