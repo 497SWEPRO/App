@@ -17,24 +17,12 @@ namespace DempApp.Shared
         public static void SetAzureConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)
         {
             string Connection;
-
-            
-               // Connection = "data source=localhost;   initial catalog=" + DataBaseName + "; persist security info=True;     Integrated Security=SSPI;";
-            
-
           
-           
-               // Connection = "Data Source=" + ServerIP + ";Initial Catalog=" + DataBaseName + ";User Id=" + UserID + ";Password=" + Password;
-
-               // Connection = "Server=tcp:migrator.database.windows.net,1433;Initial Catalog=Migrator;Persist Security Info=False;User ID=adel;Password=A12345ksu;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
-
-
-                Connection = "Server=tcp:" + ServerIP + ";Initial Catalog=" + DataBaseName + ";Persist Security Info=False;User ID="
-                + UserID + ";Password=" + Password + ";" + "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                Connection = "Server=tcp:" + ServerIP + ",1433;Initial Catalog=" + DataBaseName + ";User ID=" + UserID + ";Password=" + Password 
+                + ";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Persist Security Info=False;Connection Timeout=30;";
             
 
-               //  ServerIP = "migrator.database.windows.net,1433;";
+               //  ServerIP = "migrator.database.windows.net";
                // DataBaseName = Migrator;
                // UserID = adel;
                //Password = =A12345ksu;

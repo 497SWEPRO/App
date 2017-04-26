@@ -42,7 +42,8 @@ namespace DempApp.Models.DAL
         public DataTable ExcuteQuery(string Query)
         {
             SqlConnection Connnection = new SqlConnection();
-            Connnection.ConnectionString = Connection.GetDWConnection();
+            //Connnection.ConnectionString = Connection.GetDWConnection();
+            Connnection.ConnectionString = Connection.GetAzureConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter db = new SqlDataAdapter();
             DataTable dt = new DataTable();

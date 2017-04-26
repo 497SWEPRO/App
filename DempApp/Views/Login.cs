@@ -26,7 +26,8 @@ namespace DempApp.Views
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
-            Connection.SetDWConnectionString(txt_Server.Text, txt_Username.Text, txt_Password.Text, txt_DBName.Text);
+            //Connection.SetDWConnectionString(txt_Server.Text, txt_Username.Text, txt_Password.Text, txt_DBName.Text);
+            Connection.SetAzureConnectionString(txt_Server.Text, txt_Username.Text, txt_Password.Text, txt_DBName.Text);
             Track.Move(this,1);
             new AdminController().ViewAdminPage();
         }
