@@ -29,6 +29,12 @@ namespace DempApp.Shared
 
 
             AzureConnection = Connection;
+            using (SqlConnection Temp = new SqlConnection(AzureConnection))
+            {
+                Temp.Open(); // throws exception if invalid
+                Temp.Close();
+            }
+            
 
         }
         public static void SetDWConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)
@@ -48,6 +54,11 @@ namespace DempApp.Shared
 
 
             DWConnection = Connection;
+            using (SqlConnection Temp = new SqlConnection(DWConnection))
+            {
+                Temp.Open(); // throws exception if invalid
+                Temp.Close();
+            }
 
         }
 
