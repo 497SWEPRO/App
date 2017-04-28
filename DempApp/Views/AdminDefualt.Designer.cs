@@ -34,7 +34,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_ExtractMetaData = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -72,11 +72,12 @@
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Btn_ExtractMetaData
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.Btn_ExtractMetaData, "Btn_ExtractMetaData");
+            this.Btn_ExtractMetaData.Name = "Btn_ExtractMetaData";
+            this.Btn_ExtractMetaData.UseVisualStyleBackColor = true;
+            this.Btn_ExtractMetaData.Click += new System.EventHandler(this.Btn_ExtractMetaData_Click);
             // 
             // label1
             // 
@@ -104,11 +105,12 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_ExtractMetaData);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AdminDefualt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDefualt_FormClosing);
             this.ResumeLayout(false);
@@ -123,7 +125,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_ExtractMetaData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;

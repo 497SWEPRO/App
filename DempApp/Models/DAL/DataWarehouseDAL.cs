@@ -11,7 +11,7 @@ namespace DempApp.Models.DAL
 {
     class DataWarehouseDAL
     {
-        public DataTable GetDataBaseSchema()
+        public DataTable GetDataWareHouseSchema()
         {
             SqlConnection Connnection = new SqlConnection();
             Connnection.ConnectionString = Connection.GetDWConnection();
@@ -32,6 +32,7 @@ namespace DempApp.Models.DAL
                 }
                 catch (Exception ex)
                 {
+                    throw new Exception(ex.Message);
                 }
                 return dt;
             }

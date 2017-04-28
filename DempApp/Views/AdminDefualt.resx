@@ -239,28 +239,28 @@
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Btn_ExtractMetaData.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 123</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Btn_ExtractMetaData.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 33</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="Btn_ExtractMetaData.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="Btn_ExtractMetaData.Text" xml:space="preserve">
     <value>Extract metadata</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;Btn_ExtractMetaData.Name" xml:space="preserve">
+    <value>Btn_ExtractMetaData</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;Btn_ExtractMetaData.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Btn_ExtractMetaData.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Btn_ExtractMetaData.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">

@@ -16,8 +16,7 @@ namespace DempApp.Views
 {
     public partial class QueryData : Form
     {
-        UserBLL userBLL = new UserBLL();
-        DataBaseBLL dbBLL = new DataBaseBLL();
+
         public QueryData()
         {
             InitializeComponent();

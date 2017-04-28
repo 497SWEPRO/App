@@ -27,5 +27,11 @@ namespace DempApp.Views
         {
             Application.Exit();
         }
+
+        private void Btn_ExtractMetaData_Click(object sender, EventArgs e)
+        {
+            Track.Move(this,3);
+            new ExtractMetaDataController().ViewExtractMetaData();
+        }
     }
 }

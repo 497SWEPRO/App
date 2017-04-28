@@ -11,9 +11,11 @@ namespace DempApp.Models.BLL
     class DataWarehouseBLL
     {
         DataWarehouseDAL DWDAL = new DataWarehouseDAL();
-        public DataTable GetDataBaseSchema()
+
+
+        public DataTable ExtractMetaData()
         {
-            return DWDAL.GetDataBaseSchema();
+            return DWDAL.GetDataWareHouseSchema();
         }
 
     }
