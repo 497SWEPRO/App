@@ -13,7 +13,7 @@ namespace DempApp.Controllers
 {
     class QueryDataController
     {
-        DataBaseBLL DbBLL = new DataBaseBLL();
+        AzureBLL AzBLL = new AzureBLL();
         public void ViewQueryDataPage()
         {
             if (Connection.CheckAzureConnectionState())
@@ -33,7 +33,7 @@ namespace DempApp.Controllers
             DataTable dt;
             try
             {
-                dt = DbBLL.ExcuteQuery(Query);
+                dt = AzBLL.ExcuteQuery(Query);
             }
             catch (Exception ex)
             {

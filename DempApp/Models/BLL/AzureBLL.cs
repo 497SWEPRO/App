@@ -1,27 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DempApp.Models.DAL;
+using System.Data;
 
 namespace DempApp.Models.BLL
 {
-    class DataBaseBLL
+    class AzureBLL
     {
-        DataBaseDAL DBDAL = new DataBaseDAL();
-        public DataTable GetDataBaseSchema()
-        {
-            return DBDAL.GetDataBaseSchema();
-        }
+        AzureDAL AzureDAL = new AzureDAL();
 
         public DataTable ExcuteQuery(string Query)
         {
             DataTable dt;
             try
             {
-                dt=DBDAL.ExcuteQuery(Query);
+                dt = AzureDAL.ExcuteQuery(Query);
             }
             catch (Exception ex)
             {
@@ -30,6 +26,5 @@ namespace DempApp.Models.BLL
             }
             return dt;
         }
-
-   }
+    }
 }

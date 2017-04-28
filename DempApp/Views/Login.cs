@@ -129,22 +129,27 @@ namespace DempApp.Views
 
         private void RB_Legacy_CheckedChanged(object sender, EventArgs e)
         {
+            RB_Online.Checked = true;
             ControlInputs(2);
+            Case = 2;
         }
 
         private void RB_Azure_CheckedChanged(object sender, EventArgs e)
         {
             ControlInputs(3);
+            Case = 3;
         }
 
         private void RB_Local_CheckedChanged(object sender, EventArgs e)
         {
             ControlInputs(1);
+            Case = 1;
         }
 
         private void RB_Online_CheckedChanged(object sender, EventArgs e)
         {
             ControlInputs(2);
+            Case = 2;
         }
     }
 }

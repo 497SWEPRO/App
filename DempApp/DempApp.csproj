@@ -62,16 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Models\BLL\DataBaseBLL.cs" />
-    <Compile Include="Models\DAL\DataBaseDAL.cs" />
+    <Compile Include="Models\BLL\AzureBLL.cs" />
+    <Compile Include="Models\BLL\DataWarehouseBLL.cs" />
+    <Compile Include="Models\DAL\AzureDAL.cs" />
+    <Compile Include="Models\DAL\DataWarehouseDAL.cs" />
     <Compile Include="Shared\Connection.cs" />
     <Compile Include="Shared\Track.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\QueryDataController.cs" />
-    <Compile Include="Models\BLL\UserBLL.cs" />
     <Compile Include="Models\BusinessEntity\User.cs" />
-    <Compile Include="Models\DAL\UsersDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AdminDefualt.cs">
