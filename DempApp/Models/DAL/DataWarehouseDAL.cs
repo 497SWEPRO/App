@@ -23,7 +23,7 @@ namespace DempApp.Models.DAL
                 try
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "SELECT TABLE_CATALOG,TABLE_NAME,COLUMN_NAME,DATA_TYPE,IS_NULLABLE,ORDINAL_POSITION  FROM INFORMATION_SCHEMA.COLUMNS ORDER BY TABLE_CATALOG";
+                    cmd.CommandText = "SELECT TABLE_CATALOG as 'DataBase',TABLE_NAME as 'Table',COLUMN_NAME as 'Attribute',DATA_TYPE as 'Data Type',IS_NULLABLE as 'Is Nullable',ORDINAL_POSITION as 'Position'  FROM INFORMATION_SCHEMA.COLUMNS ORDER BY TABLE_CATALOG";
                     cmd.Connection = Connnection;
                     Connnection.Open();
                     cmd.ExecuteScalar();
