@@ -12,6 +12,7 @@ namespace DempApp.Shared
     {
         private static string AzureConnection="";
         private static string DWConnection="";
+        public static string DataBase = "";
 
 
         public static void SetAzureConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)
@@ -59,6 +60,7 @@ namespace DempApp.Shared
                 Temp.Open(); // throws exception if invalid
                 Temp.Close();
             }
+            DataBase = DataBaseName;
 
         }
 
@@ -113,6 +115,11 @@ namespace DempApp.Shared
             {
                 return true;
             }
+        }
+
+        public static string getDataBaseName()
+        {
+            return DataBase;
         }
 
 

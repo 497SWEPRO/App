@@ -32,15 +32,20 @@ namespace DempApp.Controllers
                 dt = new DataTable();
                 MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            try
+            {
 
+            
             if (SBLL.StoreSchema(dt))
             {
                 MessageBox.Show("Schema successfully stored!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return dt;
+                    new AdminController().SetStage(1);
+                    return dt;
             }
-            else
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Could Not Store Schema!", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             return dt;

@@ -34,6 +34,7 @@ namespace DempApp.Models.DAL
                 }
                 catch (Exception ex)
                 {
+                    throw new Exception(ex.Message);
                 }
             }
             return flag;
@@ -67,6 +68,7 @@ namespace DempApp.Models.DAL
                 }
                 catch (Exception ex)
                 {
+                    throw new Exception(ex.Message);
                 }
             }
             return flag;

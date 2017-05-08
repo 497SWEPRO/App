@@ -103,20 +103,19 @@ namespace DempApp.Views
         public void test()
         {
             Application.Run(new Loading());
-        }
+        }        
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(new ThreadStart(test));           
+            Thread t = new Thread(new ThreadStart(test));
             if (!CheckValidation())
             {
                 MessageBox.Show("Please Fill your credential!", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }else
             {
-                
+                t.Start();
                 try {
-                    this.Enabled = false;
-                    t.Start();
+                    this.Enabled = false;                    
                     new LoginController().SetConnection(txt_Server.Text,txt_Username.Text, txt_Password.Text, txt_DBName.Text, Case);
                 }
                 catch (Exception ex)
