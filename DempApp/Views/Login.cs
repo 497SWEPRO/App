@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DempApp.Controllers;
 using DempApp.Shared;
+using System.Threading;
 
 namespace DempApp.Views
 {
@@ -97,25 +98,36 @@ namespace DempApp.Views
             } 
 
             return true;
+        }       
+
+        public void test()
+        {
+            Application.Run(new Loading());
         }
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
+            Thread t = new Thread(new ThreadStart(test));           
             if (!CheckValidation())
             {
                 MessageBox.Show("Please Fill your credential!", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }else
             {
-
+                
                 try {
+                    this.Enabled = false;
+                    t.Start();
                     new LoginController().SetConnection(txt_Server.Text,txt_Username.Text, txt_Password.Text, txt_DBName.Text, Case);
                 }
                 catch (Exception ex)
                 {
+                    t.Abort();
+                    this.Enabled = true;
                     MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                t.Abort();
+                this.Enabled = true;
                 Track.Move(this, 1);
                 new AdminController().ViewAdminPage();
             }
@@ -151,6 +163,8 @@ namespace DempApp.Views
             ControlInputs(2);
             Case = 2;
         }
+
+        
     }
 }
  
