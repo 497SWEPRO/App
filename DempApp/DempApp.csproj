@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CheckIncompatibilityController.cs" />
     <Compile Include="Controllers\ExtractMetaDataController.cs" />
     <Compile Include="Models\BLL\AzureBLL.cs" />
     <Compile Include="Models\BLL\DataWarehouseBLL.cs" />
@@ -83,6 +84,12 @@
     </Compile>
     <Compile Include="Views\AdminDefualt.Designer.cs">
       <DependentUpon>AdminDefualt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckIncompatibilityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CheckIncompatibilityView.Designer.cs">
+      <DependentUpon>CheckIncompatibilityView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ExtractMetaDataView.cs">
       <SubType>Form</SubType>
@@ -126,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="Views\AdminDefualt.resx">
       <DependentUpon>AdminDefualt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CheckIncompatibilityView.resx">
+      <DependentUpon>CheckIncompatibilityView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExtractMetaDataView.resx">
       <DependentUpon>ExtractMetaDataView.cs</DependentUpon>

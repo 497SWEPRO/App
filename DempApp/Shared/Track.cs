@@ -25,7 +25,12 @@ namespace DempApp.Controllers
             if (Caller == null)
             {
                 Back[Level].Show();
-            }else
+            }else if (Level == 3)
+            {
+                Caller.Hide();
+                new AdminController().ViewAdminPage();
+            }
+            else
             {
                 Caller.Hide();
                 Back[Level].Show();

@@ -33,7 +33,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_CheckIncompatibility = new System.Windows.Forms.Button();
             this.Btn_ExtractMetaData = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -79,12 +79,12 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // Btn_CheckIncompatibility
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            resources.ApplyResources(this.Btn_CheckIncompatibility, "Btn_CheckIncompatibility");
+            this.Btn_CheckIncompatibility.Name = "Btn_CheckIncompatibility";
+            this.Btn_CheckIncompatibility.UseVisualStyleBackColor = true;
+            this.Btn_CheckIncompatibility.Click += new System.EventHandler(this.Btn_CheckIncompatibility_Click);
             // 
             // Btn_ExtractMetaData
             // 
@@ -153,7 +153,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Btn_CheckIncompatibility);
             this.Controls.Add(this.Btn_ExtractMetaData);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -162,7 +162,6 @@
             this.MaximizeBox = false;
             this.Name = "AdminDefualt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDefualt_FormClosing);
-            this.Load += new System.EventHandler(this.AdminDefualt_Load);
             this.Shown += new System.EventHandler(this.AdminDefualt_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Pbox_ExtractMetadata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pbox_CheckIncompatiblity)).EndInit();
@@ -180,7 +179,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Btn_CheckIncompatibility;
         private System.Windows.Forms.Button Btn_ExtractMetaData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;

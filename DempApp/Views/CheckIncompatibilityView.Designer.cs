@@ -1,6 +1,6 @@
 ﻿namespace DempApp.Views
 {
-    partial class ExtractMetaDataView
+    partial class CheckIncompatibilityView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,21 +31,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_Back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DGV_Result = new System.Windows.Forms.DataGridView();
-            this.Btn_Extract = new System.Windows.Forms.Button();
             this.PBar1 = new System.Windows.Forms.ProgressBar();
+            this.Btn_Detect = new System.Windows.Forms.Button();
+            this.Lbl_Message = new System.Windows.Forms.Label();
+            this.Btn_Correct = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Result)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.Btn_Back);
-            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(539, 37);
-            this.panel2.TabIndex = 23;
+            this.panel2.TabIndex = 25;
             // 
             // Btn_Back
             // 
@@ -60,71 +61,90 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(-1, 427);
+            this.panel1.Location = new System.Drawing.Point(0, 424);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(539, 29);
-            this.panel1.TabIndex = 22;
-            // 
-            // DGV_Result
-            // 
-            this.DGV_Result.AllowUserToAddRows = false;
-            this.DGV_Result.AllowUserToDeleteRows = false;
-            this.DGV_Result.AllowUserToResizeColumns = false;
-            this.DGV_Result.AllowUserToResizeRows = false;
-            this.DGV_Result.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGV_Result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Result.Location = new System.Drawing.Point(0, 220);
-            this.DGV_Result.Name = "DGV_Result";
-            this.DGV_Result.ReadOnly = true;
-            this.DGV_Result.Size = new System.Drawing.Size(538, 209);
-            this.DGV_Result.TabIndex = 25;
-            // 
-            // Btn_Extract
-            // 
-            this.Btn_Extract.Location = new System.Drawing.Point(201, 90);
-            this.Btn_Extract.Name = "Btn_Extract";
-            this.Btn_Extract.Size = new System.Drawing.Size(125, 29);
-            this.Btn_Extract.TabIndex = 24;
-            this.Btn_Extract.Text = "Extract";
-            this.Btn_Extract.UseVisualStyleBackColor = true;
-            this.Btn_Extract.Click += new System.EventHandler(this.Btn_Extract_Click);
+            this.panel1.TabIndex = 24;
             // 
             // PBar1
             // 
-            this.PBar1.Location = new System.Drawing.Point(33, 153);
+            this.PBar1.Location = new System.Drawing.Point(47, 248);
             this.PBar1.Name = "PBar1";
             this.PBar1.Size = new System.Drawing.Size(446, 23);
-            this.PBar1.TabIndex = 26;
+            this.PBar1.TabIndex = 28;
             // 
-            // ExtractMetaDataView
+            // Btn_Detect
+            // 
+            this.Btn_Detect.Location = new System.Drawing.Point(94, 160);
+            this.Btn_Detect.Name = "Btn_Detect";
+            this.Btn_Detect.Size = new System.Drawing.Size(125, 29);
+            this.Btn_Detect.TabIndex = 27;
+            this.Btn_Detect.Text = "Detect Errors";
+            this.Btn_Detect.UseVisualStyleBackColor = true;
+            this.Btn_Detect.Click += new System.EventHandler(this.Btn_Detect_Click);
+            // 
+            // Lbl_Message
+            // 
+            this.Lbl_Message.AutoSize = true;
+            this.Lbl_Message.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Message.Location = new System.Drawing.Point(255, 334);
+            this.Lbl_Message.Name = "Lbl_Message";
+            this.Lbl_Message.Size = new System.Drawing.Size(0, 20);
+            this.Lbl_Message.TabIndex = 29;
+            // 
+            // Btn_Correct
+            // 
+            this.Btn_Correct.Enabled = false;
+            this.Btn_Correct.Location = new System.Drawing.Point(299, 160);
+            this.Btn_Correct.Name = "Btn_Correct";
+            this.Btn_Correct.Size = new System.Drawing.Size(125, 29);
+            this.Btn_Correct.TabIndex = 30;
+            this.Btn_Correct.Text = "Correct Errors";
+            this.Btn_Correct.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(119, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(286, 23);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Schema Detection & Correction";
+            this.label2.UseMnemonic = false;
+            // 
+            // CheckIncompatibilityView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 457);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Btn_Correct);
+            this.Controls.Add(this.Lbl_Message);
             this.Controls.Add(this.PBar1);
-            this.Controls.Add(this.DGV_Result);
-            this.Controls.Add(this.Btn_Extract);
+            this.Controls.Add(this.Btn_Detect);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "ExtractMetaDataView";
+            this.Name = "CheckIncompatibilityView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ExtractMetaDataView";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExtractMetaDataView_FormClosing);
+            this.Text = "CheckIncompatibilityView";
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Result)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView DGV_Result;
-        private System.Windows.Forms.Button Btn_Extract;
-        private System.Windows.Forms.ProgressBar PBar1;
         private System.Windows.Forms.Button Btn_Back;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ProgressBar PBar1;
+        private System.Windows.Forms.Button Btn_Detect;
+        private System.Windows.Forms.Label Lbl_Message;
+        private System.Windows.Forms.Button Btn_Correct;
+        private System.Windows.Forms.Label label2;
     }
 }

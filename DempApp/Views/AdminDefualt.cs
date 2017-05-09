@@ -36,16 +36,8 @@ namespace DempApp.Views
 
         private void AdminDefualt_Load(object sender, EventArgs e)
         {
-            Stage();
 
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            new AdminController().SetStage(2);
-            Stage();
-        }
+        }        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -68,8 +60,8 @@ namespace DempApp.Views
 
         public void Stage()
         {
-            int x = new AdminController().GetStage();
-            switch (x)
+            int Stage = new AdminController().GetStage();
+            switch (Stage)
             {
                 case 0:
                     Pbox_ExtractMetadata.Image = DempApp.Properties.Resources.NotCompleted;
@@ -132,6 +124,12 @@ namespace DempApp.Views
         private void AdminDefualt_Shown(object sender, EventArgs e)
         {
             Stage();
+        }
+
+        private void Btn_CheckIncompatibility_Click(object sender, EventArgs e)
+        {
+            Track.Move(this, 3);
+            new CheckIncompatibilityController().CheckIncompatibilityPage();
         }
     }
 }
