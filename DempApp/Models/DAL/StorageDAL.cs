@@ -75,6 +75,61 @@ namespace DempApp.Models.DAL
         }
 
 
+        public DataTable DetectErrors(string Schema)
+        {
+            SqlConnection Connnection = new SqlConnection();
+            Connnection.ConnectionString = ConfigurationManager.ConnectionStrings["StorageConnection"].ConnectionString;
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter db = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            using (Connnection)
+            {
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetNumberOfErrors";
+                    cmd.Parameters.Add(new SqlParameter("@Schema", Schema));
+                    cmd.Connection = Connnection;
+                    Connnection.Open();
+                    cmd.ExecuteScalar();
+                    db.SelectCommand = cmd;
+                    db.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                return dt;
+            }
+        }
 
+
+        public bool CorrectErrors(string Schema)
+        {
+            bool flag = false;
+            SqlConnection Connnection = new SqlConnection();
+            Connnection.ConnectionString = ConfigurationManager.ConnectionStrings["StorageConnection"].ConnectionString;
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter db = new SqlDataAdapter();
+            using (Connnection)
+            {
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "CorrectSchema";
+                    cmd.Parameters.Add(new SqlParameter("@Schema", Schema));
+                    cmd.Connection = Connnection;
+                    Connnection.Open();
+                    cmd.ExecuteNonQuery();
+                    db.SelectCommand = cmd;
+                    flag = true;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+            return flag;
+        }
     }
 }

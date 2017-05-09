@@ -1,4 +1,5 @@
 ﻿using DempApp.Controllers;
+using DempApp.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace DempApp.Views
 {
     public partial class CheckIncompatibilityView : Form
     {
+        CheckIncompatibilityController CM = new CheckIncompatibilityController();
         public CheckIncompatibilityView()
         {
             InitializeComponent();
@@ -25,8 +27,22 @@ namespace DempApp.Views
 
         private void Btn_Detect_Click(object sender, EventArgs e)
         {
-            Btn_Correct.Enabled = true;
-            new AdminController().SetStage(2);
+            int Errors = CM.DetectErrors(Connection.getDataBaseName());
+            if (Errors > 0)
+            {
+                Lbl_Message.Text = "There are "+Errors+" Data Type Errors in Your Schema" ;
+                Btn_Correct.Enabled = true;
+            }else
+            {
+                Lbl_Message.Text = "No Error Found in your Schema";
+            }
+            
+            
+        }
+
+        private void Btn_Correct_Click(object sender, EventArgs e)
+        {
+            CM.CorrectErrors(Connection.getDataBaseName());                                    
         }
     }
 }

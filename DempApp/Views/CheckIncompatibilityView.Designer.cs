@@ -87,7 +87,7 @@
             // 
             this.Lbl_Message.AutoSize = true;
             this.Lbl_Message.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Message.Location = new System.Drawing.Point(255, 334);
+            this.Lbl_Message.Location = new System.Drawing.Point(90, 357);
             this.Lbl_Message.Name = "Lbl_Message";
             this.Lbl_Message.Size = new System.Drawing.Size(0, 20);
             this.Lbl_Message.TabIndex = 29;
@@ -101,6 +101,7 @@
             this.Btn_Correct.TabIndex = 30;
             this.Btn_Correct.Text = "Correct Errors";
             this.Btn_Correct.UseVisualStyleBackColor = true;
+            this.Btn_Correct.Click += new System.EventHandler(this.Btn_Correct_Click);
             // 
             // label2
             // 

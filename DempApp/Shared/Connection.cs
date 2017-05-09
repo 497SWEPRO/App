@@ -12,7 +12,7 @@ namespace DempApp.Shared
     {
         private static string AzureConnection="";
         private static string DWConnection="";
-        public static string DataBase = "";
+        private static string DataBase = "";
 
 
         public static void SetAzureConnectionString(string ServerIP, string UserID, string Password, string DataBaseName)

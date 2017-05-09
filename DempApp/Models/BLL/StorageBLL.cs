@@ -49,5 +49,21 @@ namespace DempApp.Models.BLL
             return false;
         }
 
+
+
+        public bool CorrectErrors(string Schema)
+        {
+            return SDAL.CorrectErrors(Schema);
+        }
+
+
+        public int DetectErrors(string Schema)
+        {
+            DataTable result = SDAL.DetectErrors(Schema); ;
+
+            return int.Parse(result.Rows[0][0].ToString());
+
+        }
+
   }
 }
