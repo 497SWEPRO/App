@@ -23,11 +23,11 @@ namespace DempApp.Controllers
         {
 
             DataTable Schema = SBLL.GetSchema(Connection.getDataBaseName());
-            string Create_Query = "CREATE TABLE";
-            Create_Query +=" "+ Schema.Rows[0]["Org_Table"].ToString();
-            Create_Query += "(";
             for (int i=0;i<Schema.Rows.Count;i++)
-            {                
+            {
+                string Create_Query = "CREATE TABLE";
+                Create_Query += " " + Schema.Rows[0]["Org_Table"].ToString();
+                Create_Query += "(";
                 Create_Query += Environment.NewLine;
                 Create_Query += Schema.Rows[i]["Attribute"].ToString();
                 Create_Query += " " + Schema.Rows[i]["DataType"].ToString();
@@ -42,11 +42,10 @@ namespace DempApp.Controllers
                 {
                     Create_Query += ",";
                 }
-                
+                Create_Query += Environment.NewLine;
+                Create_Query += ");";
             }
-            Create_Query += Environment.NewLine;
-            Create_Query += ");";
-            MessageBox.Show(Create_Query, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }
