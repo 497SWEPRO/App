@@ -32,17 +32,13 @@ namespace DempApp.Views
         {
             Track.Move(this,3);
             new ExtractMetaDataController().ViewExtractMetaData();
-        }
-
-        private void AdminDefualt_Load(object sender, EventArgs e)
-        {
-
-        }        
+        }   
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new AdminController().SetStage(3);
-            Stage();
+            //new AdminController().SetStage(3);
+            Track.Move(this, 3);
+            new ExcuteSchemaController().ViewLoginPage();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -69,6 +65,10 @@ namespace DempApp.Views
                     Pbox_BuildOnAzure.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_MigrateData.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_SetUpConnection.Image = DempApp.Properties.Resources.NotCompleted;
+                    Btn_CheckIncompatibility.Enabled = false;
+                    Btn_BuildOnAzure.Enabled = false;
+                    Btn_MigrateData.Enabled = false;
+                    Btn_SetUp.Enabled = false;
                     break;
 
                 case 1:
@@ -77,6 +77,10 @@ namespace DempApp.Views
                     Pbox_BuildOnAzure.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_MigrateData.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_SetUpConnection.Image = DempApp.Properties.Resources.NotCompleted;
+                    Btn_CheckIncompatibility.Enabled = true;
+                    Btn_BuildOnAzure.Enabled = false;
+                    Btn_MigrateData.Enabled = false;
+                    Btn_SetUp.Enabled = false;
                     break;
 
                 case 2:
@@ -85,6 +89,10 @@ namespace DempApp.Views
                     Pbox_BuildOnAzure.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_MigrateData.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_SetUpConnection.Image = DempApp.Properties.Resources.NotCompleted;
+                    Btn_CheckIncompatibility.Enabled = true;
+                    Btn_BuildOnAzure.Enabled = true;
+                    Btn_MigrateData.Enabled = false;
+                    Btn_SetUp.Enabled = false;
                     break;
 
                 case 3:
@@ -93,6 +101,10 @@ namespace DempApp.Views
                     Pbox_BuildOnAzure.Image = DempApp.Properties.Resources.Completed;
                     Pbox_MigrateData.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_SetUpConnection.Image = DempApp.Properties.Resources.NotCompleted;
+                    Btn_CheckIncompatibility.Enabled = true;
+                    Btn_BuildOnAzure.Enabled = true;
+                    Btn_MigrateData.Enabled = true;
+                    Btn_SetUp.Enabled = false;
                     break;
 
                 case 4:
@@ -101,6 +113,10 @@ namespace DempApp.Views
                     Pbox_BuildOnAzure.Image = DempApp.Properties.Resources.Completed;
                     Pbox_MigrateData.Image = DempApp.Properties.Resources.Completed;
                     Pbox_SetUpConnection.Image = DempApp.Properties.Resources.NotCompleted;
+                    Btn_CheckIncompatibility.Enabled = true;
+                    Btn_BuildOnAzure.Enabled = true;
+                    Btn_MigrateData.Enabled = true;
+                    Btn_SetUp.Enabled = true;
                     break;
 
                 case 5:
@@ -109,6 +125,10 @@ namespace DempApp.Views
                     Pbox_BuildOnAzure.Image = DempApp.Properties.Resources.Completed;
                     Pbox_MigrateData.Image = DempApp.Properties.Resources.Completed;
                     Pbox_SetUpConnection.Image = DempApp.Properties.Resources.Completed;
+                    Btn_CheckIncompatibility.Enabled = true;
+                    Btn_BuildOnAzure.Enabled = true;
+                    Btn_MigrateData.Enabled = true;
+                    Btn_MigrateData.Enabled = true;
                     break;
 
                 default:
@@ -117,6 +137,10 @@ namespace DempApp.Views
                     Pbox_BuildOnAzure.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_MigrateData.Image = DempApp.Properties.Resources.NotCompleted;
                     Pbox_SetUpConnection.Image = DempApp.Properties.Resources.NotCompleted;
+                    Btn_CheckIncompatibility.Enabled = false;
+                    Btn_BuildOnAzure.Enabled = false;
+                    Btn_MigrateData.Enabled = false;
+                    Btn_SetUp.Enabled = false;
                     break;
             }
         }
@@ -130,11 +154,6 @@ namespace DempApp.Views
         {
             Track.Move(this, 3);
             new CheckIncompatibilityController().CheckIncompatibilityPage();
-        }
-
-        private void AdminDefualt_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

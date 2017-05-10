@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDefualt));
             this.Btn_Logout = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Btn_SetUp = new System.Windows.Forms.Button();
+            this.Btn_MigrateData = new System.Windows.Forms.Button();
+            this.Btn_BuildOnAzure = new System.Windows.Forms.Button();
             this.Btn_CheckIncompatibility = new System.Windows.Forms.Button();
             this.Btn_ExtractMetaData = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,26 +58,26 @@
             this.Btn_Logout.UseVisualStyleBackColor = true;
             this.Btn_Logout.Click += new System.EventHandler(this.Btn_Logout_Click);
             // 
-            // button6
+            // Btn_SetUp
             // 
-            resources.ApplyResources(this.button6, "button6");
-            this.button6.Name = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            resources.ApplyResources(this.Btn_SetUp, "Btn_SetUp");
+            this.Btn_SetUp.Name = "Btn_SetUp";
+            this.Btn_SetUp.UseVisualStyleBackColor = true;
+            this.Btn_SetUp.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // Btn_MigrateData
             // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            resources.ApplyResources(this.Btn_MigrateData, "Btn_MigrateData");
+            this.Btn_MigrateData.Name = "Btn_MigrateData";
+            this.Btn_MigrateData.UseVisualStyleBackColor = true;
+            this.Btn_MigrateData.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // Btn_BuildOnAzure
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            resources.ApplyResources(this.Btn_BuildOnAzure, "Btn_BuildOnAzure");
+            this.Btn_BuildOnAzure.Name = "Btn_BuildOnAzure";
+            this.Btn_BuildOnAzure.UseVisualStyleBackColor = true;
+            this.Btn_BuildOnAzure.Click += new System.EventHandler(this.button4_Click);
             // 
             // Btn_CheckIncompatibility
             // 
@@ -150,9 +150,9 @@
             this.Controls.Add(this.Pbox_CheckIncompatiblity);
             this.Controls.Add(this.Pbox_ExtractMetadata);
             this.Controls.Add(this.Btn_Logout);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Btn_SetUp);
+            this.Controls.Add(this.Btn_MigrateData);
+            this.Controls.Add(this.Btn_BuildOnAzure);
             this.Controls.Add(this.Btn_CheckIncompatibility);
             this.Controls.Add(this.Btn_ExtractMetaData);
             this.Controls.Add(this.label1);
@@ -162,7 +162,6 @@
             this.MaximizeBox = false;
             this.Name = "AdminDefualt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDefualt_FormClosing);
-            this.Load += new System.EventHandler(this.AdminDefualt_Load_1);
             this.Shown += new System.EventHandler(this.AdminDefualt_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Pbox_ExtractMetadata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pbox_CheckIncompatiblity)).EndInit();
@@ -177,9 +176,9 @@
         #endregion
 
         private System.Windows.Forms.Button Btn_Logout;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Btn_SetUp;
+        private System.Windows.Forms.Button Btn_MigrateData;
+        private System.Windows.Forms.Button Btn_BuildOnAzure;
         private System.Windows.Forms.Button Btn_CheckIncompatibility;
         private System.Windows.Forms.Button Btn_ExtractMetaData;
         private System.Windows.Forms.Label label1;

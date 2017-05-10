@@ -19,7 +19,7 @@ namespace DempApp.Controllers
 
         public void SetStage(int Stage)
         {
-            StreamWriter File = new StreamWriter("Stage.stg");
+            StreamWriter File = new StreamWriter(Connection.getDataBaseName()+".stg");
             File.Write(Connection.getDataBaseName()+Environment.NewLine+ Stage);
             File.Close();
         }
@@ -29,7 +29,7 @@ namespace DempApp.Controllers
             string Db = "";
             try
             {
-                StreamReader File = new StreamReader("Stage.stg");
+                StreamReader File = new StreamReader(Connection.getDataBaseName() + ".stg");
                 Db = File.ReadLine();
             if (Db == Connection.getDataBaseName())
             {

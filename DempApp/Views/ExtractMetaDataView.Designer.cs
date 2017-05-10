@@ -112,6 +112,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExtractMetaDataView";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExtractMetaDataView_FormClosing);
+            this.Load += new System.EventHandler(this.ExtractMetaDataView_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Result)).EndInit();
             this.ResumeLayout(false);

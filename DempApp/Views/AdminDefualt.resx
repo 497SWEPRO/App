@@ -143,76 +143,76 @@
   <data name="&gt;&gt;Btn_Logout.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Btn_SetUp.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 349</value>
   </data>
-  <data name="button6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Btn_SetUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 33</value>
   </data>
-  <data name="button6.TabIndex" type="System.Int32, mscorlib">
+  <data name="Btn_SetUp.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
-  <data name="button6.Text" xml:space="preserve">
+  <data name="Btn_SetUp.Text" xml:space="preserve">
     <value>Set-Up Connection</value>
   </data>
-  <data name="&gt;&gt;button6.Name" xml:space="preserve">
-    <value>button6</value>
+  <data name="&gt;&gt;Btn_SetUp.Name" xml:space="preserve">
+    <value>Btn_SetUp</value>
   </data>
-  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+  <data name="&gt;&gt;Btn_SetUp.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Btn_SetUp.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Btn_SetUp.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Btn_MigrateData.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 287</value>
   </data>
-  <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Btn_MigrateData.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 33</value>
   </data>
-  <data name="button5.TabIndex" type="System.Int32, mscorlib">
+  <data name="Btn_MigrateData.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="button5.Text" xml:space="preserve">
+  <data name="Btn_MigrateData.Text" xml:space="preserve">
     <value>Migrate Data</value>
   </data>
-  <data name="&gt;&gt;button5.Name" xml:space="preserve">
-    <value>button5</value>
+  <data name="&gt;&gt;Btn_MigrateData.Name" xml:space="preserve">
+    <value>Btn_MigrateData</value>
   </data>
-  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+  <data name="&gt;&gt;Btn_MigrateData.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Btn_MigrateData.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Btn_MigrateData.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Btn_BuildOnAzure.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 231</value>
   </data>
-  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Btn_BuildOnAzure.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 33</value>
   </data>
-  <data name="button4.TabIndex" type="System.Int32, mscorlib">
+  <data name="Btn_BuildOnAzure.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="button4.Text" xml:space="preserve">
+  <data name="Btn_BuildOnAzure.Text" xml:space="preserve">
     <value>Build on Azure</value>
   </data>
-  <data name="&gt;&gt;button4.Name" xml:space="preserve">
-    <value>button4</value>
+  <data name="&gt;&gt;Btn_BuildOnAzure.Name" xml:space="preserve">
+    <value>Btn_BuildOnAzure</value>
   </data>
-  <data name="&gt;&gt;button4.Type" xml:space="preserve">
+  <data name="&gt;&gt;Btn_BuildOnAzure.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Btn_BuildOnAzure.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Btn_BuildOnAzure.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="Btn_CheckIncompatibility.Location" type="System.Drawing.Point, System.Drawing">

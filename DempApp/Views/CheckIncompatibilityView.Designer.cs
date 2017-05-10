@@ -148,7 +148,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 457);
             this.Controls.Add(this.lbl_BadMessageNumber);
-            this.Controls.Add(this.lbl_BadMessage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Btn_Correct);
             this.Controls.Add(this.Lbl_GoodMessage);
@@ -156,11 +155,13 @@
             this.Controls.Add(this.Btn_Detect);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lbl_BadMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "CheckIncompatibilityView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckIncompatibilityView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckIncompatibilityView_FormClosing);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

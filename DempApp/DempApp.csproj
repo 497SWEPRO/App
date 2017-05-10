@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CheckIncompatibilityController.cs" />
+    <Compile Include="Controllers\ExcuteSchemaController.cs" />
     <Compile Include="Controllers\ExtractMetaDataController.cs" />
     <Compile Include="Models\BLL\AzureBLL.cs" />
     <Compile Include="Models\BLL\DataWarehouseBLL.cs" />
@@ -90,6 +91,12 @@
     </Compile>
     <Compile Include="Views\CheckIncompatibilityView.Designer.cs">
       <DependentUpon>CheckIncompatibilityView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExcuteSchemaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExcuteSchemaView.Designer.cs">
+      <DependentUpon>ExcuteSchemaView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ExtractMetaDataView.cs">
       <SubType>Form</SubType>
@@ -136,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CheckIncompatibilityView.resx">
       <DependentUpon>CheckIncompatibilityView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExcuteSchemaView.resx">
+      <DependentUpon>ExcuteSchemaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExtractMetaDataView.resx">
       <DependentUpon>ExtractMetaDataView.cs</DependentUpon>
