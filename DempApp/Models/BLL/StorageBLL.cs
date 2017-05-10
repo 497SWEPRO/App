@@ -1,4 +1,5 @@
 ﻿using DempApp.Models.DAL;
+using DempApp.Shared;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -62,7 +63,11 @@ namespace DempApp.Models.BLL
             DataTable result = SDAL.DetectErrors(Schema); ;
 
             return int.Parse(result.Rows[0][0].ToString());
+        }
 
+        public DataTable GetSchema(string Schema)
+        {
+            return SDAL.GetSchema(Schema);
         }
 
   }

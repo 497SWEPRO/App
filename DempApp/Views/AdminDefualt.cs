@@ -38,7 +38,7 @@ namespace DempApp.Views
         {
             //new AdminController().SetStage(3);
             Track.Move(this, 3);
-            new ExcuteSchemaController().ViewLoginPage();
+            new ExcuteSchemaController().ExcuteSchema();
         }
 
         private void button5_Click(object sender, EventArgs e)
