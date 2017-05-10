@@ -30,11 +30,18 @@ namespace DempApp.Views
             int Errors = CM.DetectErrors(Connection.getDataBaseName());
             if (Errors > 0)
             {
-                Lbl_Message.Text = "There are "+Errors+" Data Type Errors in Your Schema" ;
+
+                lbl_BadMessageNumber.Text = Errors.ToString();
+                Lbl_GoodMessage.Visible = false;
+                lbl_BadMessage.Visible = true;
+                lbl_BadMessageNumber.Visible = true;
                 Btn_Correct.Enabled = true;
             }else
             {
-                Lbl_Message.Text = "No Error Found in your Schema";
+                lbl_BadMessage.Visible = false;
+                lbl_BadMessageNumber.Visible = false;
+                Lbl_GoodMessage.Visible = true;
+
             }
             
             

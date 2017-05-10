@@ -25,7 +25,7 @@ namespace DempApp.Views
 
         private void AdminDefualt_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            Application.ExitThread();
         }
 
         private void Btn_ExtractMetaData_Click(object sender, EventArgs e)
@@ -130,6 +130,11 @@ namespace DempApp.Views
         {
             Track.Move(this, 3);
             new CheckIncompatibilityController().CheckIncompatibilityPage();
+        }
+
+        private void AdminDefualt_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

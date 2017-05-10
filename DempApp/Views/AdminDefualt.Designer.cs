@@ -162,6 +162,7 @@
             this.MaximizeBox = false;
             this.Name = "AdminDefualt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDefualt_FormClosing);
+            this.Load += new System.EventHandler(this.AdminDefualt_Load_1);
             this.Shown += new System.EventHandler(this.AdminDefualt_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Pbox_ExtractMetadata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pbox_CheckIncompatiblity)).EndInit();

@@ -33,9 +33,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.PBar1 = new System.Windows.Forms.ProgressBar();
             this.Btn_Detect = new System.Windows.Forms.Button();
-            this.Lbl_Message = new System.Windows.Forms.Label();
+            this.Lbl_GoodMessage = new System.Windows.Forms.Label();
             this.Btn_Correct = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_BadMessage = new System.Windows.Forms.Label();
+            this.lbl_BadMessageNumber = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,14 +85,17 @@
             this.Btn_Detect.UseVisualStyleBackColor = true;
             this.Btn_Detect.Click += new System.EventHandler(this.Btn_Detect_Click);
             // 
-            // Lbl_Message
+            // Lbl_GoodMessage
             // 
-            this.Lbl_Message.AutoSize = true;
-            this.Lbl_Message.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Message.Location = new System.Drawing.Point(90, 357);
-            this.Lbl_Message.Name = "Lbl_Message";
-            this.Lbl_Message.Size = new System.Drawing.Size(0, 20);
-            this.Lbl_Message.TabIndex = 29;
+            this.Lbl_GoodMessage.AutoSize = true;
+            this.Lbl_GoodMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_GoodMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Lbl_GoodMessage.Location = new System.Drawing.Point(158, 321);
+            this.Lbl_GoodMessage.Name = "Lbl_GoodMessage";
+            this.Lbl_GoodMessage.Size = new System.Drawing.Size(231, 20);
+            this.Lbl_GoodMessage.TabIndex = 29;
+            this.Lbl_GoodMessage.Text = "No Error Found in your Schema";
+            this.Lbl_GoodMessage.Visible = false;
             // 
             // Btn_Correct
             // 
@@ -114,14 +119,39 @@
             this.label2.Text = "Schema Detection & Correction";
             this.label2.UseMnemonic = false;
             // 
+            // lbl_BadMessage
+            // 
+            this.lbl_BadMessage.AutoSize = true;
+            this.lbl_BadMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BadMessage.ForeColor = System.Drawing.Color.Red;
+            this.lbl_BadMessage.Location = new System.Drawing.Point(119, 362);
+            this.lbl_BadMessage.Name = "lbl_BadMessage";
+            this.lbl_BadMessage.Size = new System.Drawing.Size(346, 20);
+            this.lbl_BadMessage.TabIndex = 32;
+            this.lbl_BadMessage.Text = "There are        Data Type Errors in Your Schema";
+            this.lbl_BadMessage.Visible = false;
+            // 
+            // lbl_BadMessageNumber
+            // 
+            this.lbl_BadMessageNumber.AutoSize = true;
+            this.lbl_BadMessageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BadMessageNumber.Location = new System.Drawing.Point(190, 362);
+            this.lbl_BadMessageNumber.Name = "lbl_BadMessageNumber";
+            this.lbl_BadMessageNumber.Size = new System.Drawing.Size(29, 20);
+            this.lbl_BadMessageNumber.TabIndex = 33;
+            this.lbl_BadMessageNumber.Text = "15";
+            this.lbl_BadMessageNumber.Visible = false;
+            // 
             // CheckIncompatibilityView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 457);
+            this.Controls.Add(this.lbl_BadMessageNumber);
+            this.Controls.Add(this.lbl_BadMessage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Btn_Correct);
-            this.Controls.Add(this.Lbl_Message);
+            this.Controls.Add(this.Lbl_GoodMessage);
             this.Controls.Add(this.PBar1);
             this.Controls.Add(this.Btn_Detect);
             this.Controls.Add(this.panel2);
@@ -144,8 +174,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ProgressBar PBar1;
         private System.Windows.Forms.Button Btn_Detect;
-        private System.Windows.Forms.Label Lbl_Message;
+        private System.Windows.Forms.Label Lbl_GoodMessage;
         private System.Windows.Forms.Button Btn_Correct;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_BadMessage;
+        private System.Windows.Forms.Label lbl_BadMessageNumber;
     }
 }
