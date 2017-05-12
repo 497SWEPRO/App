@@ -13,6 +13,7 @@ namespace DempApp.Controllers
 {
     class ExcuteSchemaController
     {
+        AzureBLL ABLL = new AzureBLL();
         StorageBLL SBLL = new StorageBLL();
         public void ViewLoginPage()
         {
@@ -21,29 +22,55 @@ namespace DempApp.Controllers
 
         public void ExcuteSchema()
         {
-
+            string Create_Query="";
             DataTable Schema = SBLL.GetSchema(Connection.getDataBaseName());
             for (int i=0;i<Schema.Rows.Count;i++)
             {
-                string Create_Query = "CREATE TABLE";
-                Create_Query += " " + Schema.Rows[0]["Org_Table"].ToString();
+                Create_Query += "CREATE TABLE";
+                string Table = Schema.Rows[i]["Org_Table"].ToString();
+                Create_Query += " " + Table;
                 Create_Query += "(";
                 Create_Query += Environment.NewLine;
-                Create_Query += Schema.Rows[i]["Attribute"].ToString();
-                Create_Query += " " + Schema.Rows[i]["DataType"].ToString();
-                if (Schema.Rows[i]["Is_Nullable"].ToString() == "NO")
+                while (i < Schema.Rows.Count && Schema.Rows[i]["Org_Table"].ToString() == Table)
                 {
-                    Create_Query += " " + "NOT NULL";
-                }else
-                {
-                    Create_Query += " " + "NULL";
+                    Create_Query += Schema.Rows[i]["Attribute"].ToString();
+                    Create_Query += " " + Schema.Rows[i]["DataType"].ToString();
+                    if (Schema.Rows[i]["Is_Nullable"].ToString() == "NO")
+                    {
+                        Create_Query += " " + "NOT NULL";
+                    }
+                    else
+                    {
+                        Create_Query += " " + "NULL";
+                    }
+                    i++;
+                    if (i < Schema.Rows.Count)
+                    {
+                        if (Schema.Rows[i]["Org_Table"].ToString() == Table)
+                        {
+                            Create_Query += ",";
+                        }
+                    }
+                   
+                    Create_Query += Environment.NewLine;
+
                 }
-                if (!(i == (Schema.Rows.Count - 1)))
-                {
-                    Create_Query += ",";
-                }
-                Create_Query += Environment.NewLine;
+                i--;
                 Create_Query += ");";
+                Create_Query += Environment.NewLine + Environment.NewLine;
+            }
+            try
+            {
+                if (ABLL.ExcuteSchema(Create_Query))
+                {
+                    MessageBox.Show("Schema Successfully built on Azure", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new AdminController().SetStage(3);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
         }

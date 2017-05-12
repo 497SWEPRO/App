@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DempApp.Controllers;
+using DempApp.Shared;
 
 namespace DempApp.Views
 {
@@ -34,11 +35,19 @@ namespace DempApp.Views
             new ExtractMetaDataController().ViewExtractMetaData();
         }   
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Btn_BuildOnAzure_Click(object sender, EventArgs e)
         {
-            //new AdminController().SetStage(3);
-            Track.Move(this, 3);
-            new ExcuteSchemaController().ExcuteSchema();
+            if (Connection.CheckAzureConnectionState())
+            {
+                Track.Move(this, 3);
+                new ExcuteSchemaController().ViewLoginPage();
+            }
+            else
+            {
+                Track.Move(this, 3);
+                new LoginController().ViewLoginPage();
+            }           
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -155,5 +164,6 @@ namespace DempApp.Views
             Track.Move(this, 3);
             new CheckIncompatibilityController().CheckIncompatibilityPage();
         }
+
     }
 }

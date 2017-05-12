@@ -77,7 +77,7 @@
             resources.ApplyResources(this.Btn_BuildOnAzure, "Btn_BuildOnAzure");
             this.Btn_BuildOnAzure.Name = "Btn_BuildOnAzure";
             this.Btn_BuildOnAzure.UseVisualStyleBackColor = true;
-            this.Btn_BuildOnAzure.Click += new System.EventHandler(this.button4_Click);
+            this.Btn_BuildOnAzure.Click += new System.EventHandler(this.Btn_BuildOnAzure_Click);
             // 
             // Btn_CheckIncompatibility
             // 

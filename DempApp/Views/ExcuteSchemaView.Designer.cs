@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_SchemaName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Excute = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PBar1 = new System.Windows.Forms.ProgressBar();
             this.panel2.SuspendLayout();
@@ -88,14 +88,15 @@
             this.lbl_SchemaName.TabIndex = 29;
             this.lbl_SchemaName.Text = "ResortBooking";
             // 
-            // button1
+            // Btn_Excute
             // 
-            this.button1.Location = new System.Drawing.Point(116, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(307, 49);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Excute";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_Excute.Location = new System.Drawing.Point(116, 230);
+            this.Btn_Excute.Name = "Btn_Excute";
+            this.Btn_Excute.Size = new System.Drawing.Size(307, 49);
+            this.Btn_Excute.TabIndex = 30;
+            this.Btn_Excute.Text = "Excute";
+            this.Btn_Excute.UseVisualStyleBackColor = true;
+            this.Btn_Excute.Click += new System.EventHandler(this.Btn_Excute_Click);
             // 
             // label3
             // 
@@ -121,7 +122,7 @@
             this.ClientSize = new System.Drawing.Size(540, 455);
             this.Controls.Add(this.PBar1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_Excute);
             this.Controls.Add(this.lbl_SchemaName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -146,7 +147,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_SchemaName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_Excute;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar PBar1;
     }

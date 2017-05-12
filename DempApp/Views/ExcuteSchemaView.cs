@@ -33,5 +33,13 @@ namespace DempApp.Views
         {
             lbl_SchemaName.Text = Connection.getDataBaseName();
         }
+
+        private void Btn_Excute_Click(object sender, EventArgs e)
+        {
+            PBar1.Value = 0;
+            PBar1.Value = 50;
+            new ExcuteSchemaController().ExcuteSchema();
+            PBar1.Value = 50;
+        }
     }
 }

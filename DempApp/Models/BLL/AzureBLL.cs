@@ -26,5 +26,10 @@ namespace DempApp.Models.BLL
             }
             return dt;
         }
+
+        public bool ExcuteSchema(string Schema)
+        {
+            return AzureDAL.ExcuteSchema(Schema);
+        }
     }
 }
