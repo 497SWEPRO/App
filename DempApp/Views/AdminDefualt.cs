@@ -31,30 +31,22 @@ namespace DempApp.Views
 
         private void Btn_ExtractMetaData_Click(object sender, EventArgs e)
         {
-            Track.Move(this,3);
-            new ExtractMetaDataController().ViewExtractMetaData();
+            if (CheckDataWareHouseLogin())
+            {
+                Track.Move(this, 3);
+                new ExtractMetaDataController().ViewExtractMetaData();
+            }
         }   
 
         private void Btn_BuildOnAzure_Click(object sender, EventArgs e)
         {
-            if (Connection.CheckAzureConnectionState())
+            if (CheckAzureLogin())
             {
                 Track.Move(this, 3);
                 new ExcuteSchemaController().ViewLoginPage();
-            }
-            else
-            {
-                Track.Move(this, 3);
-                new LoginController().ViewLoginPage();
-            }           
+            }         
             
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            new AdminController().SetStage(4);
-            Stage();
-        }
+        }        
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -165,5 +157,49 @@ namespace DempApp.Views
             new CheckIncompatibilityController().CheckIncompatibilityPage();
         }
 
+        private void Btn_MigrateData_Click(object sender, EventArgs e)
+        {
+            if (CheckAzureLogin())
+            {
+                Track.Move(this, 3);
+                new ExcuteSchemaController().ViewLoginPage();
+            }           
+            /*new AdminController().SetStage(4);
+            Stage();*/
+        }
+
+
+        private bool CheckAzureLogin()
+        {
+            if (Connection.CheckAzureConnectionState())
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Please Login To your Azure Account!", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Track.Move(this, 3);
+                new LoginController().ViewLoginPage();
+                return false;
+            }
+
+        }
+
+
+        private bool CheckDataWareHouseLogin()
+        {
+            if (Connection.CheckDWConnectionState())
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Please Login To your Data warehouse server!", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Track.Move(this, 3);
+                new LoginController().ViewLoginPage();
+                return false;
+            }
+
+        }
     }
 }

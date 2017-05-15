@@ -70,7 +70,7 @@
             resources.ApplyResources(this.Btn_MigrateData, "Btn_MigrateData");
             this.Btn_MigrateData.Name = "Btn_MigrateData";
             this.Btn_MigrateData.UseVisualStyleBackColor = true;
-            this.Btn_MigrateData.Click += new System.EventHandler(this.button5_Click);
+            this.Btn_MigrateData.Click += new System.EventHandler(this.Btn_MigrateData_Click);
             // 
             // Btn_BuildOnAzure
             // 

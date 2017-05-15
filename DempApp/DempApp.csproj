@@ -66,6 +66,7 @@
     <Compile Include="Controllers\CheckIncompatibilityController.cs" />
     <Compile Include="Controllers\ExcuteSchemaController.cs" />
     <Compile Include="Controllers\ExtractMetaDataController.cs" />
+    <Compile Include="Controllers\MigrateDataController.cs" />
     <Compile Include="Models\BLL\AzureBLL.cs" />
     <Compile Include="Models\BLL\DataWarehouseBLL.cs" />
     <Compile Include="Models\BLL\StorageBLL.cs" />
@@ -122,6 +123,12 @@
     <Compile Include="Views\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MigrateDataView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MigrateDataView.Designer.cs">
+      <DependentUpon>MigrateDataView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\QueryData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MigrateDataView.resx">
+      <DependentUpon>MigrateDataView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QueryData.resx">
       <DependentUpon>QueryData.cs</DependentUpon>
