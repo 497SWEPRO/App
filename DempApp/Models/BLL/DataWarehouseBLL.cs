@@ -18,5 +18,10 @@ namespace DempApp.Models.BLL
             return DWDAL.GetDataWareHouseSchema();
         }
 
+        public DataTable ExcuteQuery(string Query)
+        {
+            return DWDAL.ExcuteQuery(Query);
+        }
+
     }
 }

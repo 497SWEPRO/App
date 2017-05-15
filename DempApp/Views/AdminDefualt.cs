@@ -31,11 +31,12 @@ namespace DempApp.Views
 
         private void Btn_ExtractMetaData_Click(object sender, EventArgs e)
         {
-            if (CheckDataWareHouseLogin())
+            new MigrateDataController().ExtractData("SELECT * FROM Reservation;SELECT * FROM Users;");
+            /*if (CheckDataWareHouseLogin())
             {
                 Track.Move(this, 3);
                 new ExtractMetaDataController().ViewExtractMetaData();
-            }
+            }*/
         }   
 
         private void Btn_BuildOnAzure_Click(object sender, EventArgs e)
