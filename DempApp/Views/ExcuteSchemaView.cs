@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,12 +34,30 @@ namespace DempApp.Views
         {
             lbl_SchemaName.Text = Connection.getDataBaseName();
         }
+        public void test()
+        {
+            Application.Run(new Loading());
+        }
 
         private void Btn_Excute_Click(object sender, EventArgs e)
         {
+            Thread t = new Thread(new ThreadStart(test));
             PBar1.Value = 0;
             PBar1.Value = 50;
-            new ExcuteSchemaController().ExcuteSchema();
+            t.Start();
+            try {
+                this.Enabled = false;
+                new ExcuteSchemaController().ExcuteSchema();
+
+            }
+            catch (Exception ex)
+            {
+                t.Abort();
+                this.Enabled = true;
+                MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            t.Abort();
+            this.Enabled = true;
             PBar1.Value = 50;
         }
     }

@@ -67,5 +67,34 @@ namespace DempApp.Models.DAL
             return flag;
         }
 
+
+
+        public bool DropAllTabels()
+        {
+            bool flag = false;
+            string Query = "EXEC sp_MSforeachtable @command1 =\"drop table ?\"";
+            SqlConnection Connnection = new SqlConnection();
+            Connnection.ConnectionString = Connection.GetAzureConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter db = new SqlDataAdapter();
+            using (Connnection)
+            {
+                try
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = Query;
+                    cmd.Connection = Connnection;
+                    Connnection.Open();
+                    cmd.ExecuteNonQuery();
+                    db.SelectCommand = cmd;
+                    flag = true;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+            return flag;
+        }
     }
 }

@@ -69,10 +69,24 @@ namespace DempApp.Controllers
                 }
             }
             catch (Exception ex)
+            {               
+                throw new Exception(ex.Message);
+            }
+            
+        }
+
+        public void Reset()
+        {
+            try
+            {
+                ABLL.DropAllTabels();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+
+            MessageBox.Show("All Data have been erased!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -116,7 +116,7 @@ namespace DempApp.Views
                 t.Start();
                 try {
                     this.Enabled = false;                    
-                    new LoginController().SetConnection(txt_Server.Text,txt_Username.Text, txt_Password.Text, txt_DBName.Text, Case);
+                    new LoginController().SetConnection(txt_Server.Text,txt_Username.Text, txt_Password.Text, txt_DBName.Text.ToUpper(), Case);
                 }
                 catch (Exception ex)
                 {

@@ -35,7 +35,7 @@ namespace DempApp.Controllers
                     {
                         if (UploadData())
                         {
-
+                            new AdminController().SetStage(4);
                         }
 
                     }

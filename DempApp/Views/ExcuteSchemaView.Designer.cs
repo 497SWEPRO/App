@@ -36,6 +36,7 @@
             this.Btn_Excute = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PBar1 = new System.Windows.Forms.ProgressBar();
+            this.Btn_Reset = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,11 +116,21 @@
             this.PBar1.Size = new System.Drawing.Size(446, 23);
             this.PBar1.TabIndex = 32;
             // 
+            // Btn_Reset
+            // 
+            this.Btn_Reset.Location = new System.Drawing.Point(8, 381);
+            this.Btn_Reset.Name = "Btn_Reset";
+            this.Btn_Reset.Size = new System.Drawing.Size(115, 39);
+            this.Btn_Reset.TabIndex = 33;
+            this.Btn_Reset.Text = "Reset";
+            this.Btn_Reset.UseVisualStyleBackColor = true;
+            // 
             // ExcuteSchemaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 455);
+            this.Controls.Add(this.Btn_Reset);
             this.Controls.Add(this.PBar1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Btn_Excute);
@@ -150,5 +161,6 @@
         private System.Windows.Forms.Button Btn_Excute;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar PBar1;
+        private System.Windows.Forms.Button Btn_Reset;
     }
 }

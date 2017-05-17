@@ -31,5 +31,11 @@ namespace DempApp.Models.BLL
         {
             return AzureDAL.ExcuteSchema(Schema);
         }
+
+
+        public bool DropAllTabels()
+        {
+            return AzureDAL.DropAllTabels();
+        }
     }
 }
