@@ -162,10 +162,8 @@ namespace DempApp.Views
             if (CheckAzureLogin())
             {
                 Track.Move(this, 3);
-                new ExcuteSchemaController().ViewLoginPage();
+                new MigrateDataController().ViewMigrateDataPage();
             }           
-            /*;
-            Stage();*/
         }
 
 

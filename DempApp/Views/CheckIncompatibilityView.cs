@@ -56,6 +56,7 @@ namespace DempApp.Views
             PBar1.Value += 30;
             CM.CorrectErrors(Connection.getDataBaseName());
             PBar1.Value += 20;
+            Btn_Detect_Click(sender, e);
         }
 
         private void CheckIncompatibilityView_FormClosing(object sender, FormClosingEventArgs e)

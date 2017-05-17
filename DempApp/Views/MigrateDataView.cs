@@ -22,5 +22,10 @@ namespace DempApp.Views
         {
             Track.GoBack(this, 3);
         }
+
+        private void MigrateDataView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Track.GoBack(this, 3);
+        }
     }
 }

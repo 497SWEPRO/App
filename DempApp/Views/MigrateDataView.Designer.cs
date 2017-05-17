@@ -73,6 +73,7 @@
             this.Name = "MigrateDataView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MigrateDataView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MigrateDataView_FormClosing);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

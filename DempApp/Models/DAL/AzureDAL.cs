@@ -72,7 +72,7 @@ namespace DempApp.Models.DAL
         public bool DropAllTabels()
         {
             bool flag = false;
-            string Query = "EXEC sp_MSforeachtable @command1 =\"drop table ?\"";
+            string Query = "while(exists (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES) ) begin declare @Drop_Query nvarchar(2000) declare @TBL_Schema nvarchar(2000) = (SELECT TOP 1 TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES) declare @TBL_Name nvarchar(2000) = (SELECT TOP 1 TABLE_NAME FROM INFORMATION_SCHEMA.TABLES) set @Drop_Query  = 'DROP TABLE ' +  @TBL_Schema + '.[' + @TBL_Name + '];' EXEC(@Drop_Query) end";
             SqlConnection Connnection = new SqlConnection();
             Connnection.ConnectionString = Connection.GetAzureConnection();
             SqlCommand cmd = new SqlCommand();

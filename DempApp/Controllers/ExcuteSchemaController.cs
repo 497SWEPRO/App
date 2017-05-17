@@ -20,7 +20,7 @@ namespace DempApp.Controllers
             new ExcuteSchemaView().Show();
         }
 
-        public void ExcuteSchema()
+        public bool ExcuteSchema()
         {
             string Create_Query="";
             DataTable Schema = SBLL.GetSchema(Connection.getDataBaseName());
@@ -59,20 +59,8 @@ namespace DempApp.Controllers
                 Create_Query += ");";
                 Create_Query += Environment.NewLine + Environment.NewLine;
             }
-            try
-            {
-                if (ABLL.ExcuteSchema(Create_Query))
-                {
-                    MessageBox.Show("Schema Successfully built on Azure", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new AdminController().SetStage(3);
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {               
-                throw new Exception(ex.Message);
-            }
-            
+
+            return ABLL.ExcuteSchema(Create_Query);                                                                                 
         }
 
         public void Reset()
@@ -83,10 +71,9 @@ namespace DempApp.Controllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new Exception(ex.Message);
             }
-
-            MessageBox.Show("All Data have been erased!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            new AdminController().SetStage(2);
         }
     }
 }
