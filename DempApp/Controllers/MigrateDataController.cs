@@ -112,10 +112,10 @@ namespace DempApp.Controllers
                 }
                 INSERT_Query += ")";
             }
-
+            INSERT_Query += ";";
             try
             {
-                ABLL.ExcuteQuery(INSERT_Query);
+                ABLL.ExcuteNonQuery(INSERT_Query);
             }catch(Exception ex)
             {
                 throw new Exception(ex.Message);

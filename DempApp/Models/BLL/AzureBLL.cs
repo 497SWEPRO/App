@@ -37,5 +37,11 @@ namespace DempApp.Models.BLL
         {
             return AzureDAL.DropAllTabels();
         }
+
+
+        public bool ExcuteNonQuery(string Query)
+        {
+            return AzureDAL.ExcuteNonQuery(Query);
+        }
     }
 }
