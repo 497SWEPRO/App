@@ -24,45 +24,102 @@ namespace DempApp.Controllers
             new MigrateDataView().Show();
         }
 
+        public DataTable ExtractData(string Attributes,string Table)
+        {
+            string SELECT_Query;
+            SELECT_Query = "SELECT " + Attributes + " From "+ Table;
+            return DBLL.ExcuteQuery(SELECT_Query);
+        }
+
+
+
+
+
+
 
         public void MigrateData()
         {
-            try {
-                Schema = SBLL.GetSchema(Connection.getDataBaseName());
-                if (ExtractData(""))
-                {
-                    if (CompressData())
-                    {
-                        if (UploadData())
-                        {
-                            new AdminController().SetStage(4);
-                        }
+            
+            string Attributes = "";
+            DataTable Schema = SBLL.GetSchema(Connection.getDataBaseName());
+            for (int i = 0; i < Schema.Rows.Count; i++)
+            {
 
+                string Table = Schema.Rows[i]["Org_Table"].ToString();
+                while (i < Schema.Rows.Count && Schema.Rows[i]["Org_Table"].ToString() == Table)
+                {
+                    Attributes += Schema.Rows[i]["Attribute"].ToString();
+                    i++;
+
+                    if (i < Schema.Rows.Count)
+                    {
+                        if (Schema.Rows[i]["Org_Table"].ToString() == Table)
+                        {
+                            Attributes += ",";
+                        }
+                    }
+
+                }
+                i--;
+                DataTable Data = ExtractData(Attributes, Table);
+                if (Data.Rows.Count > 0)
+                {
+                    if (CompressData(Data))
+                    {
+                        UploadData(Data, Attributes, Table);
                     }
 
                 }
             }
-            catch (Exception ex)
+        }
+
+        public bool CompressData(DataTable Data)
+        {
+            return true;
+        }
+
+        public void UploadData(DataTable Data,string Attributes,string Table)
+        {
+            string INSERT_Query="";
+            INSERT_Query = "INSERT INTO " + Table + " ("+ Attributes+") " + "VALUES ";
+
+            for (int i=0;i< Data.Rows.Count;i++)
             {
-                MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if(i == 0)
+                {
+                    INSERT_Query += "(";
+                }
+                else
+                {
+                    INSERT_Query += ",(";
+                }
+                
+                for (int g=0;g<Data.Columns.Count;g++)
+                {
+                    int Test = -1;
+                    if (int.TryParse(Data.Rows[i][g].ToString(), out Test))
+                    {
+                        INSERT_Query += Data.Rows[i][g].ToString();
+                    }
+                    else
+                    {
+                        INSERT_Query += "'"+Data.Rows[i][i].ToString() + "'";
+                    }
+                    if (g != (Data.Columns.Count-1))
+                    {
+                        INSERT_Query += ",";
+                    }
+                }
+                INSERT_Query += ")";
             }
-        }
 
-        public bool ExtractData(string Select_Query)
-        {
-          //  string Select_Query = "";
-            Data = DBLL.ExcuteQuery(Select_Query);
-            return true;           
-        }
-
-        public bool CompressData()
-        {
-            return true;
-        }
-
-        public bool UploadData()
-        {
-            return true;
+            try
+            {
+                ABLL.ExcuteQuery(INSERT_Query);
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }
