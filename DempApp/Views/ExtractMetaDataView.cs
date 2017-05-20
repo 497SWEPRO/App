@@ -27,7 +27,7 @@ namespace DempApp.Views
             Result = new ExtractMetaDataController().ExtractMetaData();
             PBar1.Value += 30;
             DGV_Result.DataSource = Result;
-            PBar1.Value += 10;            
+            PBar1.Value += 10;
         }
 
         private void ExtractMetaDataView_FormClosing(object sender, FormClosingEventArgs e)

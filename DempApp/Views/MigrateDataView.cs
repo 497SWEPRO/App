@@ -45,7 +45,9 @@ namespace DempApp.Views
                 this.Enabled = false;
                 new MigrateDataController().MigrateData();
                 t.Abort();
+                this.Enabled = true;
                 MessageBox.Show("Data Successfully Migrated to Azure", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PBar1.Value += 50;
                 new AdminController().SetStage(4);
 
             }
