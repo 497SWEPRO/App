@@ -29,6 +29,10 @@ namespace DempApp.Controllers
             {
                 Caller.Hide();
                 new AdminController().ViewAdminPage();
+            }else if (Level == 1)
+            {
+                Caller.Hide();
+                new LoginController().ViewLoginPage();
             }
             else
             {

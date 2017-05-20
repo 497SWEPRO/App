@@ -62,7 +62,7 @@
             this.Btn_Login.Name = "Btn_Login";
             this.Btn_Login.Size = new System.Drawing.Size(95, 27);
             this.Btn_Login.TabIndex = 23;
-            this.Btn_Login.Text = "Login";
+            this.Btn_Login.Text = "Connect";
             this.Btn_Login.UseVisualStyleBackColor = true;
             this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
             // 
@@ -70,11 +70,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 54);
+            this.label1.Location = new System.Drawing.Point(212, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 23);
+            this.label1.Size = new System.Drawing.Size(107, 23);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Login";
+            this.label1.Text = "Connection";
             // 
             // panel2
             // 
@@ -287,6 +287,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

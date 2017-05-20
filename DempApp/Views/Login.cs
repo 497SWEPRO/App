@@ -163,7 +163,17 @@ namespace DempApp.Views
             Case = 2;
         }
 
-        
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txt_Server.Text = "";
+            txt_Username.Text = "";
+            txt_DBName.Text = "";
+            txt_Password.Text = "";
+            RB_Azure.Checked = false;
+            RB_Legacy.Checked = false;
+            RB_Online.Checked = false;
+            RB_Local.Checked = false;
+        }
     }
 }
  
