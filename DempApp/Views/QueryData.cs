@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DempApp.Models;
 using DempApp.Shared;
 using DempApp.Models.BLL;
+using System.Threading;
 
 namespace DempApp.Views
 {
@@ -37,8 +38,13 @@ namespace DempApp.Views
             Application.Exit();
         }
 
+        public void test()
+        {
+            Application.Run(new Loading());
+        }
         private void Btn_Excute_Click(object sender, EventArgs e)
         {
+            Thread t = new Thread(new ThreadStart(test));
             string Query = txt_Query.Text;
             DataTable Result;
             if (Query == "")
@@ -46,8 +52,20 @@ namespace DempApp.Views
                 MessageBox.Show("Please Enter Query","Warnning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }else
             {
-                Result= new QueryDataController().QueryData(Query);
+                t.Start();
+                try
+                {
+                this.Enabled = false;
+                Result = new QueryDataController().QueryData(Query);
                 DGV_Result.DataSource = Result;
+                }catch(Exception ex)
+                {
+                    t.Abort();
+                    this.Enabled = true;
+                    MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                t.Abort();
+                this.Enabled = true;
             }
         }
     }

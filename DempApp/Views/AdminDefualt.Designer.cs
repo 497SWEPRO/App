@@ -63,7 +63,7 @@
             resources.ApplyResources(this.Btn_SetUp, "Btn_SetUp");
             this.Btn_SetUp.Name = "Btn_SetUp";
             this.Btn_SetUp.UseVisualStyleBackColor = true;
-            this.Btn_SetUp.Click += new System.EventHandler(this.button6_Click);
+            this.Btn_SetUp.Click += new System.EventHandler(this.Btn_SetUp_Click);
             // 
             // Btn_MigrateData
             // 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using DempApp.Controllers;
 
 namespace DempApp.Shared
 {
@@ -88,9 +89,54 @@ namespace DempApp.Shared
 
         public static void SaveAzureConnection()
         {
+            if (System.IO.File.Exists("AzureConnection.cn"))
+            { 
+                System.IO.File.Delete("AzureConnection.cn");
+            }
             StreamWriter File = new StreamWriter("AzureConnection.cn");
+            File.WriteLine("True");
             File.Write(AzureConnection);
             File.Close();
+            new AdminController().SetStage(5);
+        }
+
+        public static void DisableAzureConnection()
+        {
+            if (System.IO.File.Exists("AzureConnection.cn"))
+            {
+                System.IO.File.Delete("AzureConnection.cn");
+            }
+            StreamWriter File = new StreamWriter("AzureConnection.cn",true);
+            File.WriteLine("False");
+            File.Close();
+            new AdminController().SetStage(4);
+        }
+
+        public static bool CheckPermission()
+        {
+            
+            try
+            {
+                StreamReader File = new StreamReader("AzureConnection.cn");
+                bool Allow = bool.Parse(File.ReadLine());
+                if (Allow)
+                {
+                    string Connection = File.ReadLine();
+                    AzureConnection = Connection;
+                    File.Close();
+                    return true;
+                }
+                else
+                {
+                    File.Close();
+                    return false;
+                }                
+                
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
 
@@ -115,6 +161,12 @@ namespace DempApp.Shared
             {
                 return true;
             }
+        }
+
+        public static void ClearConnection()
+        {
+            AzureConnection = "";
+            DWConnection = "";
         }
 
         public static string getDataBaseName()

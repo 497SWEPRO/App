@@ -178,6 +178,9 @@
     <EmbeddedResource Include="Views\QueryData.resx">
       <DependentUpon>QueryData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SetUpConnectionView.resx">
+      <DependentUpon>SetUpConnectionView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -213,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NotCompleted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch_off.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

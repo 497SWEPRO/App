@@ -17,6 +17,11 @@ namespace DempApp.Controllers
             new AdminDefualt().Show();
         }
 
+        public void ViewSetupConnectionPage()
+        {
+            new SetUpConnectionView().Show();
+        }
+
         public void SetStage(int Stage)
         {
             StreamWriter File = new StreamWriter(Connection.getDataBaseName()+".stg");

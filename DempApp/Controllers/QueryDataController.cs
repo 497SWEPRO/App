@@ -16,13 +16,13 @@ namespace DempApp.Controllers
         AzureBLL AzBLL = new AzureBLL();
         public void ViewQueryDataPage()
         {
-            if (Connection.CheckAzureConnectionState())
+            if (Connection.CheckPermission())
             {
                 new QueryData().Show();
             }
             else
             {
-                MessageBox.Show("No Connection Established", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You don't have Permission, To access azure Data warehouse.", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Track.GoBack(null, 0);
             }
             
@@ -37,8 +37,7 @@ namespace DempApp.Controllers
             }
             catch (Exception ex)
             {
-                dt = new DataTable();
-                MessageBox.Show(ex.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new Exception(ex.Message);
             }
             return dt;
         }

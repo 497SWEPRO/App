@@ -21,6 +21,7 @@ namespace DempApp.Views
 
         private void Btn_Logout_Click(object sender, EventArgs e)
         {
+            Connection.ClearConnection();
             Track.GoBack(this,1);
         }
 
@@ -48,11 +49,7 @@ namespace DempApp.Views
             
         }        
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            new AdminController().SetStage(5);
-            Stage();
-        }
+ 
 
 
         public void Stage()
@@ -198,6 +195,15 @@ namespace DempApp.Views
                 return false;
             }
 
+        }
+
+        private void Btn_SetUp_Click(object sender, EventArgs e)
+        {
+            if (CheckAzureLogin())
+            {
+                Track.Move(this, 3);
+                new AdminController().ViewSetupConnectionPage();
+            }
         }
     }
 }
